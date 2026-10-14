@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leads | Coimbra Ferolla e Viana Advogados</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<style>
+  :root {
+    --bg: #0A0A0A; --card: #171717; --card-2: #1F1F1F; --line: #262626; --line-2: #333;
+    --fg: #EDEDED; --fg-2: #A1A1A1; --fg-3: #737373;
+    --c-visits: #A1A1A1; --c-leads: #E5B54A; --c-conv: #5EB98A;
+    --wa: #11804A; --wa-hover: #15965A; --danger: #F87171; --focus: #6E9BFF;
+    --f: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--f); font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 28px max(16px, env(safe-area-inset-right, 0px)) 48px max(16px, env(safe-area-inset-left, 0px)); }
+  button, input { font: inherit; color: inherit; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 34px; padding: 0 14px; border-radius: 8px; border: 1px solid var(--line-2); background: transparent; cursor: pointer; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--fg); transition: background-color .15s ease, border-color .15s ease; }
+  .btn:hover { background: var(--card-2); border-color: #444; }
+  .btn-primary { background: var(--fg); color: #0A0A0A; border-color: var(--fg); text-transform: none; letter-spacing: 0; font-size: 14px; height: 40px; }
+  .btn-primary:hover { background: #fff; }
+  .btn[disabled] { opacity: .6; cursor: progress; }
+
+  /* Login */
+  .login { min-height: 100vh; min-height: 100dvh; display: grid; place-items: center; padding: 24px 16px; }
+  .login-card { width: 100%; max-width: 360px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+  .login-card img { height: 54px; width: auto; align-self: flex-start; }
+  .login-card h1 { margin: 4px 0 0; font-size: 16px; font-weight: 600; }
+  .login-card p { margin: 0; color: var(--fg-2); font-size: 13px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: 12px; color: var(--fg-2); }
+  .field input { height: 40px; padding: 0 12px; background: var(--bg); border: 1px solid var(--line-2); border-radius: 8px; }
+  .field input:focus-visible { outline: none; border-color: var(--focus); }
+  .err { color: var(--danger); font-size: 13px; margin: 0; }
+
+  /* Painel */
+  .top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+  .top h1 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: .04em; }
+  .top p { margin: 4px 0 0; color: var(--fg-2); font-variant-numeric: tabular-nums; }
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; min-width: 0; }
+  .card-h { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+  .card-h h2 { margin: 0; font-size: 14px; font-weight: 600; }
+  .range { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 11px; color: var(--fg-3); letter-spacing: .08em; text-transform: uppercase; }
+  .range input { height: 32px; padding: 0 8px; background: var(--bg); border: 1px solid var(--line-2); border-radius: 6px; font-size: 13px; letter-spacing: 0; text-transform: none; color: var(--fg); }
+  .chart-box { position: relative; height: 280px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 12px; color: var(--fg-2); font-size: 12px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i { width: 10px; height: 2px; border-radius: 2px; display: inline-block; }
+  .legend b { color: var(--fg); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .two { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .tbl-wrap { overflow-x: auto; margin: 0 -20px; padding: 0 20px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; font-weight: 500; color: var(--fg-3); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 8px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  td { padding: 10px; border-bottom: 1px solid var(--line); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: 0; }
+  td.num, th.num { text-align: right; }
+  td.muted { color: var(--fg-2); }
+  td.origem { max-width: 260px; overflow: hidden; text-overflow: ellipsis; color: var(--fg-2); }
+  .empty { color: var(--fg-3); text-align: center; padding: 28px 10px; }
+  .wa-btn { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 6px; border: 1px solid #1F3D2D; background: rgba(17,128,74,.12); color: #7DD3A6; text-decoration: none; font-size: 12px; font-weight: 600; }
+  .wa-btn:hover { background: rgba(17,128,74,.25); }
+  .wa-btn svg { width: 14px; height: 14px; }
+  .status { color: var(--fg-3); font-size: 12px; }
+  .status.err { color: var(--danger); }
+  @media (min-width: 900px) { .two { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; } }
+  @media (max-width: 560px) { .chart-box { height: 220px; } .top h1 { font-size: 16px; } }
+</style>
+</head>
+<body>
+
+<main class="login" id="view-login">
+  <form class="login-card" id="login-form" method="post" action="#" novalidate>
+    <img src="/assets/logo.webp" alt="Coimbra Ferolla e Viana Advogados" width="720" height="273">
+    <div>
+      <h1>Painel de leads</h1>
+      <p>Acesso restrito à equipe do escritório e à ADS BR.</p>
+    </div>
+    <div class="field">
+      <label for="login-user">Usuário</label>
+      <input id="login-user" name="usuario" autocomplete="username" value="Admin" required>
+    </div>
+    <div class="field">
+      <label for="login-pass">Senha</label>
+      <input id="login-pass" name="senha" type="password" autocomplete="current-password" required>
+    </div>
+    <p class="err" id="login-err" role="alert" hidden></p>
+    <button class="btn btn-primary" type="submit" id="login-btn">Entrar</button>
+  </form>
+</main>
+
+<div class="wrap" id="view-dash" hidden>
+  <header class="top">
+    <div>
+      <h1>LEADS — COIMBRA FEROLLA E VIANA</h1>
+      <p id="total-line">Carregando…</p>
+    </div>
+    <button class="btn" type="button" id="logout">Sair</button>
+  </header>
+
+  <div class="grid">
+    <section class="card" aria-labelledby="h-evo">
+      <div class="card-h">
+        <h2 id="h-evo">Evolução diária</h2>
+        <div class="range">
+          <label for="f-de">De</label><input type="date" id="f-de">
+          <label for="f-ate">Até</label><input type="date" id="f-ate">
+        </div>
+      </div>
+      <div class="chart-box"><canvas id="chart" aria-label="Gráfico de visitas, cadastros e taxa de conversão por dia" role="img"></canvas></div>
+      <div class="legend">
+        <span><i style="background:var(--c-visits)"></i>Visitas <b id="sum-v">0</b></span>
+        <span><i style="background:var(--c-leads)"></i>Cadastros <b id="sum-l">0</b></span>
+        <span><i style="background:var(--c-conv)"></i>Taxa de conversão <b id="sum-c">0%</b></span>
+      </div>
+    </section>
+
+    <div class="two">
+      <section class="card" aria-labelledby="h-lp">
+        <div class="card-h"><h2 id="h-lp">Conversão por LP</h2></div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>LP</th><th class="num">Visitas</th><th class="num">Leads</th><th class="num">Conv.</th></tr></thead>
+            <tbody id="tb-lp"><tr><td colspan="4" class="empty">Nenhum dado encontrado</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="h-leads">
+        <div class="card-h"><h2 id="h-leads">Leads</h2><span class="status" id="status"></span></div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Nome</th><th>WhatsApp</th><th>LP</th><th>Origem</th><th>Data</th><th>Ação</th></tr></thead>
+            <tbody id="tb-leads"><tr><td colspan="6" class="empty">Nenhum lead encontrado</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+<script src="/config.js"></script>
+<script src="/assets/dashboard.js"></script>
+</body>
+</html>

@@ -20,13 +20,11 @@ window.CFV_CONFIG = {
   pageKey: "trabalhista",
 
   whatsapp: {
-    // Número anotado na reunião: (32) 9802-4060 — suspeita de dígito faltando.
-    // NÃO preencher por suposição. Formato esperado: apenas dígitos com DDI, ex.: "5532999999999".
-    number: "",
-    // Só mude para true depois que o escritório confirmar o número.
-    confirmed: false,
-    message:
-      "Olá, preenchi o formulário da página de Direito Trabalhista da Coimbra Ferolla e Viana Advogados e gostaria de conversar."
+    // Número confirmado pela ADS BR em 20/10/2026: (32) 99802-4060
+    number: "5532998024060",
+    confirmed: true,
+    // Mensagem enviada ao abrir o WhatsApp após o formulário
+    message: "Vim do Google e quero falar com um advogado trabalhista especialista."
   },
 
   // Backend de captura — Supabase "ADS BR CLIENTES" (mesmo das outras LPs da ADS BR).
@@ -43,6 +41,8 @@ window.CFV_CONFIG = {
   },
 
   // Mensuração — deixar vazio até existirem IDs reais. Nada é carregado enquanto estiver vazio.
+  // A conversão do Google Ads é disparada na página /redirect (3 s antes de abrir o WhatsApp),
+  // uma única vez por lead (não conta de novo se a pessoa recarregar a página).
   tracking: {
     metaPixelId: "",
     googleTagId: "",            // ex.: "AW-XXXXXXXXX" ou "G-XXXXXXX"

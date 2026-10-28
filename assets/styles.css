@@ -476,46 +476,47 @@ button { font: inherit; color: inherit; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 
-/* ===== Textos centralizados (ajuste 28/10/2026) ===== */
-.hero-copy { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.hero-title, .lede { margin-inline: auto; }
-.hero-actions { justify-content: center; }
-.sec-title, .sec-title-row { margin-inline: auto; text-align: center; align-items: center; }
-.sec-title { max-width: 820px; }
-.sec-title-row { flex-direction: column; justify-content: center; gap: var(--s-2); }
-.sec-title-row > div { align-items: center; }
-.sec-sub, .sec-aside { margin-inline: auto; text-align: center; }
-.sec-aside { max-width: 60ch; }
-.fineprint { margin-inline: auto; text-align: center; }
-.ri-head { margin-inline: auto; text-align: center; align-items: center; }
-.ri-lede { margin-inline: auto; }
-.ri-card { align-items: center; text-align: center; }
-.ri-foot { flex-direction: column; justify-content: center; text-align: center; }
-.ri-caution { border-left: 0; padding-left: 0; margin-inline: auto; }
-.pp-body { align-items: center; text-align: center; }
-.pp-t { margin-inline: auto; }
-.tile-body, .tile-light, .tile-dark { align-items: center; text-align: center; }
-.tile-body p, .tile-light p, .tile-dark p { margin-inline: auto; }
-.doc { justify-content: center; text-align: center; }
-.docs-note { justify-content: center; text-align: center; }
-.atd-copy { align-items: center; text-align: center; }
-.atd-copy .timeline { text-align: left; align-self: stretch; max-width: 520px; margin-inline: auto; }
-.sobre-copy { align-items: center; text-align: center; }
-.sobre-copy > p:not(.label) { margin-inline: auto; }
-.sobre-facts { justify-content: center; }
-.map-wrap { justify-content: center; }
-.map-wrap figcaption { text-align: center; }
-.faq-head { align-items: center; text-align: center; }
-.faq-cta { align-self: center; }
-.contato-copy { align-items: center; text-align: center; }
-.contato-copy > p:not(.label) { margin-inline: auto; }
-.assure { align-items: flex-start; width: fit-content; margin-inline: auto; text-align: left; }
-.bento-hint { justify-content: center; }
-.form-k { text-align: center; }
-.privacy { text-align: center; }
-.footer-inner { text-align: center; justify-items: center; }
-.footer-legal { justify-self: center; }
+/* ===== Textos centralizados só no celular (ajuste 28/10/2026) ===== */
 @media (max-width: 760px) {
+  .hero-copy { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hero-title, .lede { margin-inline: auto; }
+  .hero-actions { justify-content: center; }
+  .sec-title, .sec-title-row { margin-inline: auto; text-align: center; align-items: center; }
+  .sec-title { max-width: 820px; }
+  .sec-title-row { flex-direction: column; justify-content: center; gap: var(--s-2); }
+  .sec-title-row > div { align-items: center; }
+  .sec-sub, .sec-aside { margin-inline: auto; text-align: center; }
+  .sec-aside { max-width: 60ch; }
+  .fineprint { margin-inline: auto; text-align: center; }
+  .ri-head { margin-inline: auto; text-align: center; align-items: center; }
+  .ri-lede { margin-inline: auto; }
+  .ri-card { align-items: center; text-align: center; }
+  .ri-foot { flex-direction: column; justify-content: center; text-align: center; }
+  .ri-caution { border-left: 0; padding-left: 0; margin-inline: auto; }
+  .pp-body { align-items: center; text-align: center; }
+  .pp-t { margin-inline: auto; }
+  .tile-body, .tile-light, .tile-dark { align-items: center; text-align: center; }
+  .tile-body p, .tile-light p, .tile-dark p { margin-inline: auto; }
+  .doc { justify-content: center; text-align: center; }
+  .docs-note { justify-content: center; text-align: center; }
+  .atd-copy { align-items: center; text-align: center; }
+  .atd-copy .timeline { text-align: left; align-self: stretch; max-width: 520px; margin-inline: auto; }
+  .sobre-copy { align-items: center; text-align: center; }
+  .sobre-copy > p:not(.label) { margin-inline: auto; }
+  .sobre-facts { justify-content: center; }
+  .map-wrap { justify-content: center; }
+  .map-wrap figcaption { text-align: center; }
+  .faq-head { align-items: center; text-align: center; }
+  .faq-cta { align-self: center; }
+  .contato-copy { align-items: center; text-align: center; }
+  .contato-copy > p:not(.label) { margin-inline: auto; }
+  .assure { align-items: flex-start; width: fit-content; margin-inline: auto; text-align: left; }
+  .bento-hint { justify-content: center; }
+  .form-k { text-align: center; }
+  .privacy { text-align: center; }
+  .footer-inner { text-align: center; justify-items: center; }
+  .footer-legal { justify-self: center; }
+
   .ri-card { flex-direction: column; align-items: center; justify-content: center; gap: .35rem; padding: 1rem; }
   .ri-card::before { min-width: 0; }
   .docs-note { justify-content: center; text-align: center; align-items: center; }

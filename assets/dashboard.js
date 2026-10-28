@@ -39,7 +39,7 @@
   var USERS = { admin: "admin@coimbra-ferolla-viana.adsbr.internal" };
   var CLIENT_NAME = "Coimbra Ferolla e Viana Advogados";
   var LP_NAMES = { trabalhista: "Direito Trabalhista", familia: "Direito de Família" };
-  var PATH_TO_LP = { "/": "trabalhista", "/index.html": "trabalhista", "/trabalhista": "trabalhista" };
+  var PATH_TO_LP = { "/": "trabalhista", "/index.html": "trabalhista", "/trabalhista": "trabalhista", "/familia": "familia", "/familia.html": "familia" };
 
   // Bloqueia o envio nativo antes de qualquer outra coisa (evita usuário/senha na URL)
   var loginForm = document.getElementById("login-form");
